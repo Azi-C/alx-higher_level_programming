@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-for alph in range(97, 132):
-    if alph != 101 and alph != 113:
+for alph in range(97, 123):
+    if alph != 113 and alph != 101:
         print('{:c}'.format(alph), end='')
