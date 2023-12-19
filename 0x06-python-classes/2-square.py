@@ -10,7 +10,7 @@ class Square:
         Initializes the square
 
         Attributes:
-            size: the size of a square
+            size (int): the size of a square
         Raises:
             TypeError: size must be an int
             ValueEroor: size must be >= 0
