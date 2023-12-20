@@ -14,4 +14,3 @@ class Node:
             next_node : private; can be None or Node object
         """
         self.data = data
-
