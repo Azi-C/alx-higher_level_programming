@@ -1,45 +1,44 @@
 #!/usr/bin/python3
-"""This class defines a square"""
+"""class that defines a square"""
 
 
 class Square:
-    """class that defines a square with Private instance attribute"""
+    """class that defines a square with attribute"""
 
     def __init__(self, size=0, position=(0, 0)):
         """
         Initializes the square
 
         Attributes:
-            size (int): the size of a square
-            position (int): the position of the square
+            size (int): the size of a side of a square
+            position (int): tuple of two positive integers
         """
-
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """Getter : returns the size"""
+        """Getter : returns the size attribute"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter : set the size"""
+        """Setter : set the size attribute"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
-
-        self.__size = value
+        else:
+            self.__size = value
 
     @property
     def position(self):
-        """Getter : returns the position of a square"""
+        """Getter : returns the position attribute"""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Setter : set the position of the square"""
+        """Setter : set the position attribute"""
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or type(value[1]) is not int or \
            value[0] < 0 or value[1] < 0:
@@ -48,8 +47,8 @@ class Square:
             self.__position = value
 
     def area(self):
-        """This function returns the area of a square"""
-        return self.__size ** 2
+        """Public instance : that returns the square area"""
+        return (self.__size)**2
 
     def my_print(self):
         """Public instance : that prints the square with # character"""
