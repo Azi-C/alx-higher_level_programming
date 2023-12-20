@@ -52,13 +52,11 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """this method  prints in stdout the square  with #"""
+        """Public instance : that prints the square with # character"""
         if self.__size == 0:
             print("")
         else:
-            for i in range(self.__size):
-                for k in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print("")
+            print("\n" * self.__position[1], end="")
+            print("\n".join([" " * self.__position[0] +
+                             "#" * self.__size
+                             for rows in range(self.__size)]))
