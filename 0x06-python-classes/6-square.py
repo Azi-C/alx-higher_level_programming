@@ -11,15 +11,8 @@ class Square:
 
         Attributes:
             size (int): the size of a square
-            position (int, int): the position of the square
-        Raises:
-            TypeError: size must be an int
-            ValueEroor: size must be >= 0
+            position (int): the position of the square
         """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
 
         self.__size = size
         self.__position = position
@@ -50,8 +43,9 @@ class Square:
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or type(value[1]) is not int or \
            value[0] < 0 or value[1] < 0:
-               raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = value
 
     def area(self):
         """This function returns the area of a square"""
