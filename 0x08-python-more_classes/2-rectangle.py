@@ -3,17 +3,17 @@
 
 
 class Rectangle:
-    """class that defines a rectangle with attributes"""
+    """class that defines a rectangle with attribute"""
 
     def __init__(self, width=0, height=0):
         """
-        Initializes the Rectangle
+        Initialiszes the Rectangle
 
         Attributes:
-            width, height (int): rectangle's informations
+            width, height (int): of the rectangle
 
         Raises:
-            TypeError: Attributes are not int
+            TypeError: Attributes are not an int
             ValueError: Attributes are less than 0
         """
         self.width = width
@@ -21,12 +21,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter : returns the width"""
+        """Getter : returns the width attribute"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter: set the value of the width"""
+        """Setter : set the width attribute"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -35,12 +35,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter: get the height"""
+        """Getter : returns the height attribute"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter: set the value of the height"""
+        """Setter : set the height attribute"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -53,6 +53,6 @@ class Rectangle:
 
     def perimeter(self):
         """Public instance : that returns the rectangle perimeter"""
-        if self.__width and self.__height !=  0:
+        if self.__width and self.__height != 0:
             return (self.__width * 2) + (self.__height * 2)
         return 0
