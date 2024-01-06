@@ -7,7 +7,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initialization
+        Initializes the Rectangle
 
         Attributes:
             width, height (int): rectangle's informations
