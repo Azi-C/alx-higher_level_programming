@@ -72,3 +72,39 @@ class Rectangle(Base):
     def area(self):
         """returns the area value of the Rectangle instance"""
         return self.__width * self.__height
+
+    def display(self):
+        """prints the rectangle instance with the character #"""
+        print("\n" * self.__y +
+              "\n".join(" " * self.__x + "#" * self.__width
+                        for i in range(self.__height)))
+
+    def __str__(self):
+        """prints [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """assigns argument to each attribute: id, width, height, x, y"""
+        if args:
+            for key, value in enumerate(args):
+                if key == 0:
+                    self.id = value
+                elif key == 1:
+                    self.width = value
+                elif key == 2:
+                    self.height = value
+                elif key == 3:
+                    self.x = value
+                else:
+                    self.y = value
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        Dict = {}
+        Dict = dict({'x': self.x, 'y': self.y, 'id': self.id,
+                    'height': self.__height, 'width': self.__width})
+        return Dict
