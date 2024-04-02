@@ -11,5 +11,5 @@ if __name__ == "__main__":
     try:
         with urllib.request.urlopen(argv[1]) as rsp:
             print(rsp.read().decode('utf-8'))
-    except urllib.error.HTTPERROR as err:
-        print("Error code: {}".formt(err.code))
+    except urllib.error.HTTPError as err:
+        print("Error code: {}".format(err.code))
