@@ -8,4 +8,4 @@ from sys import argv
 
 if __name__ == "__main__":
     with urllib.request.urlopen(argv[1]) as rsp:
-        print(rsp.geyheader('X-Request-Id'))
+        print(rsp.getheader('X-Request-Id'))
